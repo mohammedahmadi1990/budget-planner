@@ -47,8 +47,6 @@ public class UserController {
                 .orElseThrow(() -> new ResourceNotFoundException("Not found a user with id = " + id));
 
         theUser.setIncome(user.getIncome());
-        theUser.setTotalExpense(user.getTotalExpense());
-
         return new ResponseEntity<>(userRepository.save(theUser), HttpStatus.OK);
     }
 
@@ -69,10 +67,15 @@ public class UserController {
         User user = userRepository.findById(userId).
                 orElseThrow(()-> new ResourceNotFoundException("Not found a user with id = " + userId));
 
-        List<Expense> expenses = new ArrayList<>();
-        expenseRepository.findAll().forEach(expenses::add);
+        List<Expense> expenses = expenseRepository.findByUserId(userId);
 
-        UserExpense userExpenses = new UserExpense(user.getId(),user.getIncome(),user.getTotalExpense(),user.getLeftOver(),expenses);
+        double totalExpense = 0;
+        for (Expense theExpense: expenses
+        ) {
+            totalExpense += theExpense.getAmount();
+        }
+
+        UserExpense userExpenses = new UserExpense(user.getId(),user.getIncome(),totalExpense,user.getIncome()-totalExpense);
         return new ResponseEntity<>(userExpenses, HttpStatus.OK);
     }
 

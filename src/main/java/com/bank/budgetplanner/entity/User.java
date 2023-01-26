@@ -15,20 +15,12 @@ public class User {
     @Column(name = "income")
     private double income;
 
-    @Column(name = "total_expense")
-    private double totalExpense;
-
-    @Column(name = "left_over")
-    private double leftOver;
-
     public User() {
 
     }
 
     public User(double income) {
         this.income = income;
-        this.totalExpense = 0;
-        this.leftOver = income;
     }
 
     public Long getId() {
@@ -47,19 +39,4 @@ public class User {
         this.income = income;
     }
 
-    public double getTotalExpense() {
-        return totalExpense;
-    }
-
-    public void setTotalExpense(double totalExpense) {
-        this.totalExpense = totalExpense;
-    }
-
-    public double getLeftOver() {
-        return leftOver;
-    }
-
-    public void setLeftOver(double leftOver) {
-        this.leftOver = leftOver;
-    }
 }
