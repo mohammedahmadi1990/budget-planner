@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RealityChecker</title>
+    <link rel="icon" type="image/x-icon" href="favi.png" />
+    <link rel="stylesheet" href="Style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!-- <script
+      type="text/javascript"
+      src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=ISNvthJyqP-x7jfO1XXgvfbTpnw53-GmDdQ7LfaRghXQpTlOPmYrUEt2R-MwGmNwW21hytghnezp0kTnjnxrY6sG-Lm4TEUgVNBhJvuMmwqk-o9guh3G8Th3bNSZ6EKbcPf4NnzTzKM0reAvjUJBrJy4sxYmW6mQE-6qgVAbqFdTgc2yzu1RH7dK_ZbwrW0gfGbcaf1dUxITep9NMkbRAdatNY5HL6zIuhIivS9COiXThDMTTwgqS94uvXn8VtRZJgRg6mVm7DFUtgAC2oh0YMDEuPpfbyeAvoaB1_OEb92fNh8xYsq5iYX__-1oSUyrZeUPuKtLStJBPoSb8hBZxBWhGO5TNSI6KPaAXY1-E_SouIJtJBSbHXK7QFjrAvUG5UNadWhYzL3V5gRHZfuQ8gkk9b2jMFk1HCqj8y1qpiUtsC_-n7NF9eKrdW8zvBZkGt7fyC-zl-KdWPH1NfszUmp6E7Y6nF01M7RlXo8aG5N4wPrQGkNGwtr0uGmOBSSMtGuGZgpF-6clt1_JG6R_doRlP09Lw64ysI-K9LRFIj2P0hqvUPJdJY3IyG5vSKj_OegQ7z5akHVu-fZTXH0z_xuUkZBgio0T0RUTqnO2T7zcK6KtBUlzxR2SGKnn8SeWtaWPtdf_1FmPYPCPdvlB8-yxB0vApSw7lSaPjE1ZmJOfT2fq6TBfEcPjv2uw03XKe1GXi9dxG1Xqip1oKP_GSOwAEIDDkWhGHYyhhJB-O1yFBIb8DzBWIuymzQPHYM0BZ7lXcwJ16OL-fxT6xhuwOM6UuOFibIMnHz3oQOMZDdu84UKng0e2N0J63899DCIywJTdCSnN3kR3dRVsFNTiO6Lhkjs-zLR10BhnnQAPupEmW18y1Ugy_FEE7JIYP01CfQJr1VxJjvcvgoJF2mlzTnSj5p6R0olw8w9sfwz6-DlOUj8BDREyleoAjxWBS_zT0iI1GDs8wsQk1H3tP3sgJ3W7uXhex4t2Joxe5aboavU0eGlJ5_04NjgumwShsjutFLxS6faqPzWHNi1ZxgvGq3q7Mh8fjWwbSVCsfPDLfZopgwtdiJ9I3nki-0Dr0YBRVazWOCW7vbPO5YDGG4YDsWZKlfuI0MFMjdsv4tdw5FLYcyELICW_2tLysELgM4rceoIsstIupsOS1FmNimXL6yCtfAzW49TP40Vt6gPACwA47cMPfjb9L6dTVWoquhr8SHrHRV4T93S5TW4eH6aqfYAskM1IsKq8bN4jtqMat5d-DdSiEdVOa14YPQeB1GAIexpllQaVUzUj_AaxW_KyblBoPYPOKNrzV82KmOr99rdJ5-GQf401IeB56hyUgAC6qlfK0GkBBtVXFS9w00mBe-7XjHzW4quqPlu1f1MNZJLYEHh4HUok4KW8Gw1lGVymb1lDlxQG7FGuHrGLtKJ0ppwuC2a2UvFaqV-NPBnuOOFhXQt7fGV70iDY9WqyCW3rhGyeB979AoXMgs4xpVph3ew6a7r-3lC4xF8siQzYFTUgC4d0-xnC368SCL9L3994eJzEHXEny0NpNe1_oS6CcIi-r8R940ami8ceutEa7k5vPr0_BY0TltGmht3ajuwm"
+      nonce="8043c7c4d35e21a219e6357c6b3226dd"
+      charset="UTF-8"
+    ></script> -->
+    <link
+      rel="stylesheet"
+      crossorigin="anonymous"
+      href="https://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9tYWlsLWF0dGFjaG1lbnQuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2F0dGFjaG1lbnQvdS8wLz91aT0yJmlrPWIyZjVlNzFkODAmYXR0aWQ9MC4xJnBlcm1tc2dpZD1tc2ctZjoxNzU2NTU5NjU5MjYyMTkwOTc1JnRoPTE4NjA4ZGI0MTUxYWE1N2Ymdmlldz1hdHQmZGlzcD1zYWZlJnJlYWxhdHRpZD1mX2xka2lkZmx5MSZzYWRkYmF0PUFOR2pkSjl3RTNUTUhQUHZYLUtvVWZEV0g5ZWloa2FqSzN4QlNBbk1kWFQ5UUw2VkNEX1lkZUR1cXkwUHNiOVNWdUpnTk1rZElYUVBUQ1NYZGh0NUMwdzZCY3BNTml4M0VVX1pLdWZDRFVqOFVORnVoa3l5WEwzcHBHX2NmeVNkLUVUM3ptUVpzQ1c5cmVLSmk4WWJ2SkhzamVyUWtmNDNtM05WOWZmUmc3WU5PYU5tTW83ZnJncGZUVWNUV3pEMFg2QUlYNUthcVpMOXVONjF6ZXczWDN1bXRoMWZGdlZKUGd1dFhVMm9iOHg5WTNMOU93aHdBZFRvVktJTUg1NlhKTk5xQkNQVnZqUXVQby1EX0hKbVM4bnBMYnB1ZUc3enVHX0I5MllrUTlHY3hINUd0dkdma0l0NmRmNnV4Rkt6UEN3OWlYTWtLaUo4bzc3Ty1jaEdqUi1vLTB6UHhzeWhOSVdacUV6ajBXeVBHajd3S3cyTHpJeURib2ZJaTZ3LUw2TndSZnlJZWNVaGtEdXlUbmNjaHQ0ZG90Q1JlOWNMa3FRbHpEVTMxeXBUTWVWLWR1MTJhZko3NWhQS28wUGZjV2FRMER4bGhnSmFlZXJtMkZfTzZKTkdweGpiM2NEbGx4NmdKVE9EVTdzeFpWa0lTYUJENU1OTUVtRUl1OHhkUXNIRmZVNldCVkttZTdUNm5xRGxPYi1HT0xYeFBkMklZVVlFa2lETWJKVk9tY0hWTTFuajdGLUNMa0pLYU1uVGxzYnJFdUlNMVlTZXpLd2dVc3J2dV9weFlROWg4bExHX0I4QlhJSk9KNnZobzBITWgxd2diNzRocUE1YjFRaUl0ZUxsRnJubDA0cHpZTjRQNXRBTXhMYW9Gb3Q1OFI0aE9sRmhwMjNYRHRmTjhnZUI0WUxBZEpKMEN2M19GUldRaVlpQlA4SnZoSWR2V1duQ2FxNmlKODVDUktqZFRYa3F0T2w1VXA2eF9HTDh5Z2FfcVRNNUZOQjVyMTJEVURnLUI3T1pmaGVBVzFVQ1RnSm0zVXdkbXZsNjBaMzlvOVB4YUhEOGh1M0p6MGlraXNITkhXWF94R0h3dURqeENCdnR5YmRhdWpiLXl2eEJZMnhqbWlTYWhDQ296SGVTZW14WFMxei04bkxUVk13Y1gxRkcybmRTd0FCYjc2MWxab3JTMnVnY2E2NWFaaHpCczFsaS1vYnUxbWV3MVBDTlhCUHZkdElyd291SVZ3NlNWMkluTHk5MkgtLTFrekNBZFZja0RfMTkxR2xZT3J5Z2xIb202alAy"
+    />
+  </head>
+  <body>
+    <div class="card">
+      <header class="header">
+        <!-- <img id="main_logo" src="reality_check.png" /> -->
+        <br />
+        <div class="topnav">
+          <a class="active" href="HomePage.html"><i class="fa fa-home"></i></a>
+          <a href="Information.html"> INFORMATION </a>
+          <a href="Reality.html">REALITY CHECKER</a>
+        </div>
+      </header>
+    </div>
+    <div class="row">
+      <div class="column side">
+        <div class="card">
+          <h2>FACT</h2>
+          <h3>Did you know ?</h3>
+          <p>
+            17% of people have no savings.<br />
+            With a further 10% having less than £100
+          </p>
+        </div>
+        <div class="card">
+          <h2>FACT</h2>
+          <h3>Did you know ?</h3>
+          <p>
+            39% of adults (20.3 million)<br />
+            don't feel confident managing their money
+          </p>
+        </div>
+        <div class="card">
+          <h2>FACT</h2>
+          <h3>Did you know ?</h3>
+          <p>
+            Over a quarter of Uk households have no home insurance while the
+            average home has contents worth over £35000. Insurance can cost less
+            than £6 per week
+          </p>
+        </div>
+        <div class="card">
+          <h2>FACT</h2>
+          <h3>Did you know ?</h3>
+          <p>
+            In August 2022 the average amount of unsecured debt per adult in the
+            Uk was £3877
+          </p>
+        </div>
+      </div>
+
+      <div class="column middle">
+        <h1>LIFESTYLE CHECKER</h1>
+        <!-- <imsg id="redTick" src="red_tick.png" /> -->
+        <div class="card">
+          <h2>What is this</h2>
+          <p>
+            Welcome to our Lifestyle Calculator, designed to help you take
+            control of your finances and ensure a secure financial future. Our
+            calculator takes into account your financial expectations and
+            calculates if you have enough money to meet these expectations. This
+            tool provides a simple and effective way to plan your budget and
+            make informed decisions about your finances. With our Lifestyle
+            Calculator, you can take the first step towards realizing your
+            financial goals and securing a brighter financial future. So why
+            wait? Start using our calculator today and get a clearer picture of
+            your financial situation
+          </p>
+          <h3>How should you use the Lifestyle checker</h3>
+          <p>How to use text to be placed here</p>
+        </div>
+
+        <div class="card">
+          <h2>LIFESTYLE CHECKER</h2>
+          <fieldset class="budget-result">
+            <legend class="result-title">Budget Planner Result</legend>
+            <table class="result-table">
+              <tr>
+                <th>Income</th>
+                <th>Total Expense</th>
+                <th>Left Over</th>
+              </tr>
+              <tr>
+                <td id="income">£0.00</td>
+                <td id="expenses">£0.00</td>
+                <td id="left-over">£0.00</td>
+              </tr>
+            </table>
+          </fieldset>
+
+          <form>
+            <fieldset>
+              <legend>Income</legend>
+              <br />
+              <i>The Average income in the UK (excl London) is</i>
+              <strong>£7890.00.</strong><br />
+              <br />
+              <div class="input-container">
+                <div class="input-box">
+                  <label for="">£</label>
+                  <input class="input-money" id="monthlyIncome" type="number" />
+                </div>
+              </div>
+              <br />
+            </fieldset>
+            <fieldset>
+              <legend>Housing</legend>
+              <br />
+              <i>The Average cost of rent in the UK (excl London) is</i>
+              <strong>£583.00.</strong><br />
+              <br />
+              <div class="input-container">
+                <div class="input-box">
+                  <label for="">£</label>
+                  <input class="input-money" id="housing" type="number" />
+                </div>
+              </div>
+              <br />
+            </fieldset>
+            <fieldset>
+              <legend>Household Bills</legend>
+              <br />
+              <i> The Average cost of Household bills in the UK is </i
+              ><strong>£457.78.</strong>
+              <br />
+              <br />
+              <div class="input-container">
+                <div class="input-box">
+                  <label for="">£</label>
+                  <input
+                    class="input-money"
+                    id="household-bills"
+                    type="number"
+                  />
+                </div>
+              </div>
+              <br />
+            </fieldset>
+            <fieldset>
+              <legend>Transportation</legend>
+              <br />
+              <i> The average cost of transportation in the UK is </i
+              ><strong>£144.83.</strong>
+              <br />
+              <br />
+              <div class="input-container">
+                <div class="input-box">
+                  <label for="">£</label>
+                  <input
+                    class="input-money"
+                    id="transportation"
+                    type="number"
+                  />
+                </div>
+              </div>
+              <br />
+            </fieldset>
+            <fieldset>
+              <legend>Leisure</legend>
+              <br />
+              <i>
+                The average cost of leisure activities in the UK (TV packages ,
+                Takeaways , gym membership etc is)
+              </i>
+              <strong>£306.52</strong>
+              <br />
+              <br />
+              <div class="input-container">
+                <div class="input-box">
+                  <label for="">£</label>
+                  <input class="input-money" id="leisure" type="number" />
+                </div>
+              </div>
+              <br />
+            </fieldset>
+            <fieldset>
+              <legend>Holidays</legend>
+              <br />
+              <i>
+                The Average cost of a Holiday in the UK (monthly equivalent
+                based on UK average of 2 weeks of holidays taken, at £855 per
+                person per week. is </i
+              ><strong>£142.50.</strong><br />
+              <br />
+              <div class="input-container">
+                <div class="input-box">
+                  <label for="">£</label>
+                  <input class="input-money" id="holidays" type="number" />
+                </div>
+              </div>
+              <br />
+            </fieldset>
+            <fieldset>
+              <legend>Clothing</legend>
+              <br />
+              <i>
+                The average cost of clothes in the UK (recommended budget is 5%
+                of your monthly take home pay)is</i
+              ><strong> £43.88.</strong><br />
+              <br />
+              <div class="input-container">
+                <div class="input-box">
+                  <label for="">£</label>
+                  <input class="input-money" id="clothes" type="number" />
+                </div>
+              </div>
+              <br />
+            </fieldset>
+            <fieldset>
+              <legend>Savings</legend>
+              <br />
+              <i>The median savings figure in the UK is </i
+              ><strong>£180.</strong><br />
+              <br />
+              <div class="input-container">
+                <div class="input-box">
+                  <label for="">£</label>
+                  <input class="input-money" id="savings" type="number" />
+                </div>
+              </div>
+              <br />
+            </fieldset>
+            <br />
+            <div class="button-container">
+              <input
+                class="button submit"
+                id="submit"
+                type="submit"
+                value="Submit"
+              />
+              <input
+                class="button reset"
+                id="reset"
+                type="reset"
+                value="Reset"
+              />
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="column side">
+        <div class="card">
+          <h2>FACT</h2>
+          <h3>Did you know ?</h3>
+          <p>
+            In the year from April 21-22 a 500g bag of pasta increased in price
+            by over 50% the highest increase of any food item
+          </p>
+        </div>
+        <div class="card">
+          <h2>FACT</h2>
+          <h3>Did you know ?</h3>
+
+          <p>
+            Around 1million UK adults dont have a bank account and around 7
+            million are defined as financially excluded
+          </p>
+        </div>
+        <div class="card">
+          <h2>FACT</h2>
+          <h3>Did you know ?</h3>
+          <p>
+            Most banks will allow a child to have an account with a debit card
+            from age 11 with parents permission
+          </p>
+        </div>
+        <div class="card">
+          <h2>FUN FACT 6</h2>
+          <h3>Did you know ?</h3>
+          <p>
+            According to a 2019 survey by the Joseph Rowntree Foundation, almost
+            half of UK households (45%) were struggling to afford basic
+            necessities, such as food and housing, due to the rising cost of
+            living.
+          </p>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="app.js"></script>
+  </body>
+</html>

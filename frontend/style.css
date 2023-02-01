@@ -1,0 +1,211 @@
+/* will ensure the childs box will remain within the parents box */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 10px;
+  background: #f1f1f1;
+}
+
+/* Styling the header */
+.header {
+  background-color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+/* making sure the logo image shrinks along with window , making it responsive */
+#main_logo {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 65%;
+}
+
+/* Style the top menu bar */
+.topnav {
+  overflow: hidden;
+  background-color: blue;
+}
+
+/* Style the menu links */
+.topnav a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color the colour on mouse over */
+.topnav a:hover {
+  background-color: red;
+  color: black;
+}
+
+/* Create three unequal columns that floats next to each other */
+.column {
+  float: left;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Left and right */
+.column.side {
+  width: 25%;
+}
+
+/* Middle */
+.column.middle {
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* created a card feature which essentially is the background in which the <div> is placed
+  helps with article separation and readability */
+.card {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column.side,
+  .column.middle {
+    width: 100%;
+  }
+}
+
+#redTick {
+  width: 100px;
+  height: 100px;
+}
+
+.result-title {
+  font-weight: bold;
+  color: blue;
+}
+
+table {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 8px;
+  text-align: center;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+  text-align: center;
+}
+
+th {
+  background-color: rgb(124, 124, 124);
+  color: white;
+  text-align: center;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-box {
+  color: darkgrey;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid darkgrey;
+  width: 230px;
+  height: 35px;
+  border-radius: 5px;
+}
+
+.input-money {
+  margin-top: 1px;
+  margin-left: 2px;
+  border: 0;
+  height: 30px;
+  font-size: 15px;
+}
+
+.input-money:focus {
+  outline: none;
+}
+
+fieldset {
+  border: 1px solid darkgrey;
+  border-radius: 10px;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* Buttons */
+.button {
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.submit {
+  background-color: #169649;
+  width: 50%;
+}
+
+.reset {
+  background-color: #c02727;
+  width: 50%;
+}
+
+#submit:hover,
+#submit:focus {
+  background-color: #3ec373;
+}
+
+#reset:hover,
+#reset:focus {
+  background-color: #d54e4e;
+}

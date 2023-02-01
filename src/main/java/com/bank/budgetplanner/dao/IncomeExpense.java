@@ -1,29 +1,31 @@
 package com.bank.budgetplanner.dao;
 
 import com.bank.budgetplanner.entity.Expense;
-import jakarta.persistence.Column;
+import com.bank.budgetplanner.entity.Income;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import lombok.Data;
 
-import java.util.List;
+import java.util.Optional;
 
-@Entity
-public class UserExpense {
+@Data
+public class IncomeExpense {
 
-    @Id
     private Long id;
-    private double income;
+    private Income income;
+    private Expense expense;
     private double totalExpense;
     private double leftOver;
 
-    public UserExpense(Long id, double income, double totalExpense, double leftOver) {
-        this.id = id;
-        this.income = income;
-        this.totalExpense = totalExpense;
-        this.leftOver = leftOver;
+    public IncomeExpense() {
     }
 
-    public UserExpense() {
+    public IncomeExpense(Optional<Income> income, Expense expense, double totalExpenses, double leftOver) {
+        this.id = income.get().getId();
+        this.income = income.get();
+        this.expense = expense;
+        this.totalExpense = totalExpenses;
+        this.leftOver = leftOver;
     }
 
     public Long getId() {
@@ -34,12 +36,20 @@ public class UserExpense {
         this.id = id;
     }
 
-    public double getIncome() {
+    public Income getIncome() {
         return income;
     }
 
-    public void setIncome(double income) {
+    public void setIncome(Income income) {
         this.income = income;
+    }
+
+    public Expense getExpense() {
+        return expense;
+    }
+
+    public void setExpense(Expense expense) {
+        this.expense = expense;
     }
 
     public double getTotalExpense() {
